@@ -1,0 +1,120 @@
+.perspective {
+  perspective: 1000px;
+  perspective-origin: 50% 50%;
+}
+
+.dice {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  transform-style: preserve-3d;
+  margin: 20px;
+  transition: transform 0.3s;
+}
+
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.1);
+  /* background: white; */
+  border: 2px solid #ccc;
+  backface-visibility: visible;
+}
+
+.front  { transform: translateZ(50px); }
+.back   { transform: rotateY(180deg) translateZ(50px); }
+.right  { transform: rotateY(90deg) translateZ(50px); }
+.left   { transform: rotateY(-90deg) translateZ(50px); }
+.top    { transform: rotateX(90deg) translateZ(50px); }
+.bottom { transform: rotateX(-90deg) translateZ(50px); }
+
+.dots {
+  display: grid;
+  grid-template-areas: 
+    "a b c"
+    "d e f"
+    "g h i";
+  gap: 8px;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* Dot patterns for each face */
+.dots-1 { 
+  grid-template-areas: 
+    ". . ."
+    ". e ."
+    ". . ."; 
+}
+
+.dots-2 { 
+  grid-template-areas: 
+    ". . a"
+    ". . ."
+    "i . ."; 
+}
+
+.dots-3 { 
+  grid-template-areas: 
+    ". . a"
+    ". e ."
+    "i . ."; 
+}
+
+.dots-4 { 
+  grid-template-areas: 
+    "a . c"
+    ". . ."
+    "g . i"; 
+}
+
+.dots-5 { 
+  grid-template-areas: 
+    "a . c"
+    ". e ."
+    "g . i"; 
+}
+
+.dots-6 { 
+  grid-template-areas: 
+    "a . c"
+    "d . f"
+    "g . i"; 
+}
+
+/* Dot positioning */
+.dot:nth-child(1) { grid-area: a; }  /* top-left */
+.dot:nth-child(2) { grid-area: b; }  /* top-middle */
+.dot:nth-child(3) { grid-area: c; }  /* top-right */
+.dot:nth-child(4) { grid-area: d; }  /* middle-left */
+.dot:nth-child(5) { grid-area: e; }  /* center */
+.dot:nth-child(6) { grid-area: f; }  /* middle-right */
+.dot:nth-child(7) { grid-area: g; }  /* bottom-left */
+.dot:nth-child(8) { grid-area: h; }  /* bottom-middle */
+.dot:nth-child(9) { grid-area: i; }  /* bottom-right */
+
+.rolling {
+  animation: roll 1s ease-in-out;
+}
+
+@keyframes roll {
+  0% { transform: rotateX(0) rotateY(0) rotateZ(0); }
+  100% { transform: rotateX(720deg) rotateY(720deg) rotateZ(720deg); }
+}
+
+.face {
+  font-weight: bold;
+} 
