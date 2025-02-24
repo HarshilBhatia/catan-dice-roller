@@ -1,6 +1,9 @@
 .perspective {
   perspective: 1000px;
   perspective-origin: 50% 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .dice {
@@ -10,19 +13,20 @@
   transform-style: preserve-3d;
   margin: 20px;
   transition: transform 0.3s;
+  transform-origin: center center;
 }
 
 .face {
   position: absolute;
   width: 100%;
   height: 100%;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.1);
+  /* box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.1); */
   /* background: white; */
-  border: 2px solid #ccc;
+  /* border: 2px solid #ccc; */
   backface-visibility: visible;
 }
 
@@ -36,13 +40,13 @@
 .dots {
   display: grid;
   grid-template-areas: 
-    "a b c"
-    "d e f"
-    "g h i";
-  gap: 8px;
+    "a . c"
+    ". e ."
+    "g . i";
+  /* gap: 8px; */
   width: 100%;
   height: 100%;
-  padding: 10px;
+  padding: 5px;
 }
 
 .dot {
@@ -50,6 +54,8 @@
   height: 12px;
   border-radius: 50%;
   background: currentColor;
+  justify-self: center;
+  align-self: center;
 }
 
 /* Dot patterns for each face */
@@ -62,16 +68,16 @@
 
 .dots-2 { 
   grid-template-areas: 
-    ". . a"
+    "a . ."
     ". . ."
-    "i . ."; 
+    ". . i"; 
 }
 
 .dots-3 { 
   grid-template-areas: 
-    ". . a"
+    "a . ."
     ". e ."
-    "i . ."; 
+    ". . i"; 
 }
 
 .dots-4 { 

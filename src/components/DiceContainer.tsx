@@ -20,9 +20,14 @@ const DiceContainer = () => {
     setShowTimer(false);
 
     setTimeout(() => {
-      const newDice1 = Math.floor(Math.random() * 6) + 1;
-      const newDice2 = Math.floor(Math.random() * 6) + 1;
+      // const newDice1 = Math.floor(Math.random() * 6) + 1;
+      const newDice1 = 2;
+      // const newDice2 = Math.floor(Math.random() * 6) + 1;
+      const newDice2 = 3;
       const newDice3 = Math.floor(Math.random() * 6) + 1;
+      // const newDice3 = 3;
+
+      console.log('rolled:', newDice1, newDice2, newDice3);
       setDice({ 
         dice1: newDice1, 
         dice2: newDice2,
@@ -54,11 +59,11 @@ const DiceContainer = () => {
           isRolling={isRolling}
           colors={{
             1: 'black',
+            6: '#2ECC71',
             2: 'black',
-            3: 'black',
             4: '#F1C40F',
-            5: '#3498DB',
-            6: '#2ECC71'
+            3: 'black',
+            5: '#3498DB'
           }}
           hidenum={true}
         />

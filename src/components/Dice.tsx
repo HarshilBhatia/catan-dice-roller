@@ -40,7 +40,7 @@ const Dice = ({ value, isRolling, colors, hidenum }: DiceProps) => {
       rotateZ: [0, 360, 720, 1080],
       transition: {
         duration: 1.5,
-        ease: "easeInOut",
+        ease: "easeIn",
         times: [0, 0.2, 0.5, 1]
       }
     },
@@ -65,15 +65,17 @@ const Dice = ({ value, isRolling, colors, hidenum }: DiceProps) => {
     // Map each dice number to the grid areas that should have dots
     const dotPositions = {
       1: ['e'],                    // Center
-      2: ['c', 'g'],              // Top-right, bottom-left
-      3: ['c', 'e', 'g'],         // Top-right, center, bottom-left
+      2: ['a', 'i'],              // Top-right, bottom-left
+      3: ['a', 'e', 'i'],         // Top-right, center, bottom-left
       4: ['a', 'c', 'g', 'i'],    // Corners
       5: ['a', 'c', 'e', 'g', 'i'], // Corners + center
       6: ['a', 'c', 'd', 'f', 'g', 'i'], // Left side, right side
     };
 
+    console.log(num, dotPositions[num]);
     return positions.map((pos) => {
       const shouldShowDot = dotPositions[num]?.includes(pos);
+      console.log(pos, shouldShowDot);
       return shouldShowDot ? <div key={pos} className={styles.dot} style={{ gridArea: pos }} /> : null;
     });
   };
