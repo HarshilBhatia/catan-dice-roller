@@ -3,7 +3,7 @@ import DiceContainer from './components/DiceContainer';
 
 function App() {
   return (
-    <Container maxWidth="sm">
+    <Container maxWidth="md">
       <Box sx={{ 
         textAlign: 'center', 
         py: 4,

@@ -20,10 +20,10 @@ const DiceContainer = () => {
     setShowTimer(false);
 
     setTimeout(() => {
-      // const newDice1 = Math.floor(Math.random() * 6) + 1;
-      const newDice1 = 2;
-      // const newDice2 = Math.floor(Math.random() * 6) + 1;
-      const newDice2 = 3;
+      const newDice1 = Math.floor(Math.random() * 6) + 1;
+      // const newDice1 = 2;
+      const newDice2 = Math.floor(Math.random() * 6) + 1;
+      // const newDice2 = 3;
       const newDice3 = Math.floor(Math.random() * 6) + 1;
       // const newDice3 = 3;
 
